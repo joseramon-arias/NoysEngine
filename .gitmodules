@@ -1,0 +1,3 @@
+[submodule "NoysEngine/vendor/spdlog"]
+	path = NoysEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog
