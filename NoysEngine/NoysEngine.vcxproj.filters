@@ -4,6 +4,9 @@
     <Filter Include="Noys">
       <UniqueIdentifier>{4EBD897C-3AF4-8A0D-E3E0-7010CFF6060F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Noys\Events">
+      <UniqueIdentifier>{72A5174A-DE5A-903F-674F-8A16D3038743}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Noys.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Noys\EntryPoint.h">
       <Filter>Noys</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Noys\Events\ApplicationEvent.h">
+      <Filter>Noys\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Noys\Events\Event.h">
+      <Filter>Noys\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Noys\Events\KeyEvent.h">
+      <Filter>Noys\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Noys\Events\MouseEvent.h">
+      <Filter>Noys\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Noys\Log.h">
       <Filter>Noys</Filter>
