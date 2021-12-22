@@ -10,6 +10,11 @@ workspace "NoysEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "NoysEngine/vendor/GLFW/include"
+
+include "NoysEngine/vendor/GLFW"
+
 project "NoysEngine"
 	location "NoysEngine"
 	kind "SharedLib"
@@ -17,6 +22,9 @@ project "NoysEngine"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "nypch.h"
+	pchsource "NoysEngine/src/nypch.cpp"
 
 	files
 	{
@@ -27,12 +35,19 @@ project "NoysEngine"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines

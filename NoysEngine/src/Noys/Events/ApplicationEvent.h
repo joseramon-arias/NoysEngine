@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Noys
 {
 	class NOYS_API WindowResizeEvent : public Event

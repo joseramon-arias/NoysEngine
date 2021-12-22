@@ -1,3 +1,6 @@
 [submodule "NoysEngine/vendor/spdlog"]
 	path = NoysEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "NoysEngine/vendor/GLFW"]
+	path = NoysEngine/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW
