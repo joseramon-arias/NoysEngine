@@ -1,8 +1,7 @@
 #pragma once
 
 #include "Noys/Window.h"
-
-#include <GLFW/glfw3.h>
+struct GLFWwindow;
 
 namespace Noys
 {

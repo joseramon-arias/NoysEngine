@@ -12,8 +12,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "NoysEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "NoysEngine/vendor/Glad/include"
 
 include "NoysEngine/vendor/GLFW"
+include "NoysEngine/vendor/Glad"
+
+startproject "Sandbox"
 
 project "NoysEngine"
 	location "NoysEngine"
@@ -36,24 +40,27 @@ project "NoysEngine"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "Off"
+		staticruntime "On"
 		systemversion "latest"
 
 		defines
 		{
 			"NY_PLATFORM_WINDOWS",
-			"NY_BUILD_DLL"
+			"NY_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -63,14 +70,17 @@ project "NoysEngine"
 
 	filter "configurations:Debug"
 		defines "NY_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "NY_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "NY_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -110,12 +120,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "NY_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "NY_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "NY_DIST"
+		buildoptions "/MD"
 		optimize "On"

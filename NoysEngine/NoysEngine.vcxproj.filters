@@ -37,6 +37,12 @@
     <ClInclude Include="src\Noys\Events\MouseEvent.h">
       <Filter>Noys\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Noys\Layer.h">
+      <Filter>Noys</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Noys\LayerStack.h">
+      <Filter>Noys</Filter>
+    </ClInclude>
     <ClInclude Include="src\Noys\Log.h">
       <Filter>Noys</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Noys\Application.cpp">
+      <Filter>Noys</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Noys\Layer.cpp">
+      <Filter>Noys</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Noys\LayerStack.cpp">
       <Filter>Noys</Filter>
     </ClCompile>
     <ClCompile Include="src\Noys\Log.cpp">
